@@ -72,6 +72,9 @@ get_prop(vendor_hal_gnss_qti, boot_status_prop)
 # read Meta info file - /vendor/firmware_mnt/verinfo/ver_info.txt
 r_dir_file(vendor_hal_gnss_qti, firmware_file)
 
+# read sensor props
+get_prop(vendor_hal_gnss_qti, vendor_sensors_prop)
+
 #Allow Gnss HAL to access ril socket
 allow vendor_hal_gnss_qti vendor_rild_socket:dir search;
 unix_socket_connect(vendor_hal_gnss_qti, vendor_rild, rild)
